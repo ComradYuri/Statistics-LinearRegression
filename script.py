@@ -49,7 +49,7 @@ X_future = np.array(range(2013, 2050))
 # print(X_future)
 X_future = X_future.reshape(-1, 1)
 # print(X_future)
-future_predict = [regr.coef_[0]*x + regr.intercept_ for x in X_future]
+future_predict = regr.predict(X_future)
 
 print("Total honey production in 2050 is predicted to be {} kilo".format(int((regr.coef_*2050 + regr.intercept_)[0][0])))
 
